@@ -1,14 +1,13 @@
 # CC Multimodal Toolkit
 
-> 给 Claude Code 装上眼睛和画笔：一次安装，三种能力。
+> 给 Claude Code 装上眼睛和画笔：一次安装，两种能力。
 
 ## 能力矩阵
 
 | 能力 | 触发方式 | 引擎 | 耗时 |
 |------|----------|------|------|
-| 🔍 读图分析 | `/cgmb` 或 "看下截图" | Gemini 2.5 Flash | 10-30s |
-| 🎨 AI 生图 | `/codex:rescue` 或 "生成xxx图片" | gpt-image-2 | 30-60s |
-| 📸 截图反馈 | "这里不对" 等引用 | 自动检测 → CGMB | 10-30s |
+| 🔍 读图分析 | `/cgmb` / "看下截图" → 直接读图<br>"这里不对"等 → 自动读最新截图 | Gemini 2.5 Flash | 10-30s |
+| 🎨 AI 生图 | `/codex:rescue` / "生成xxx图片" | gpt-image-2 | 30-60s |
 
 ## 安装
 
@@ -58,6 +57,12 @@ codex login    # 交互式 OAuth（需 ChatGPT 订阅）
 /cgmb D:/photo.png 这是什么       # 指定图片分析
 /cgmb chat 今天AI圈有什么新闻      # Gemini 网页搜索
 ```
+或截图（Win+PrtScn）后直接说：
+```
+这里逻辑不对，帮我改
+看下这个报错
+```
+Claude Code 自动读取最新截图并结合文字处理。
 
 ### 生图
 
@@ -68,16 +73,6 @@ codex login    # 交互式 OAuth（需 ChatGPT 订阅）
 ```
 生成一张秋天红叶林间的照片
 ```
-
-### 截图反馈
-
-截图（Win+PrtScn）后直接说：
-```
-这里逻辑不对，帮我改
-看下这个报错
-这个界面需要优化
-```
-Claude Code 自动读取最新截图并结合你的文字处理。
 
 ## 架构
 
