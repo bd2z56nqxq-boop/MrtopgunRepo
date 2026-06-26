@@ -1,0 +1,11 @@
+{
+  "name": "cc-multimodal-toolkit",
+  "version": "1.0.0",
+  "description": "给 Claude Code 装上眼睛和画笔：Gemini 读图 + Codex 生图 + 截图自动检测，一站式多模态工作台。",
+  "author": {
+    "name": "Mrtopgun"
+  },
+  "homepage": "https://github.com/bd2z56nqxq-boop/MrtopgunRepo",
+  "repository": "https://github.com/bd2z56nqxq-boop/MrtopgunRepo",
+  "keywords": ["image", "multimodal", "gemini", "codex", "screenshot", "chinese"]
+}
