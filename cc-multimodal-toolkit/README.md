@@ -7,7 +7,7 @@
 | 能力 | 触发方式 | 引擎 | 耗时 |
 |------|----------|------|------|
 | 🔍 读图分析 | `/cgmb` 或 "看下截图" | Gemini 2.5 Flash | 10-30s |
-| 🎨 AI 生图 | `/generate` 或 "生成xxx图片" | gpt-image-2 | 30-60s |
+| 🎨 AI 生图 | `/codex:rescue` 或 "生成xxx图片" | gpt-image-2 | 30-60s |
 | 📸 截图反馈 | "这里不对" 等引用 | 自动检测 → CGMB | 10-30s |
 
 ## 安装
@@ -62,7 +62,7 @@ codex login    # 交互式 OAuth（需 ChatGPT 订阅）
 ### 生图
 
 ```
-/generate 赛博朋克城市夜景海报
+/codex:rescue 赛博朋克城市夜景海报
 ```
 或直接说：
 ```

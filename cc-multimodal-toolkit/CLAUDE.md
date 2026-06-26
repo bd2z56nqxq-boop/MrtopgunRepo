@@ -18,7 +18,7 @@
 ## 生图规则
 
 - 用户说"生成xxx图片" → 使用 Codex CLI (`codex exec`) 生图
-- 用户使用 `/generate` 命令 → 同上
+- 用户使用 `/codex:rescue` 命令 → 同上
 - 生图默认输出到 `C:/Users/Administrator/output/images/`
 
 ## 环境变量
