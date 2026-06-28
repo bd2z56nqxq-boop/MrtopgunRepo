@@ -14,8 +14,16 @@ claude.cmd plugin marketplace add bd2z56nqxq-boop/MrtopgunRepo
 
 然后安装具体插件：
 
+**macOS / Linux / Git Bash:**
+
 ```bash
 claude plugin install cc-multimodal-toolkit@mrtopgun-plugins --scope user
+```
+
+**Windows PowerShell:**
+
+```powershell
+claude.cmd plugin install cc-multimodal-toolkit@mrtopgun-plugins --scope user
 ```
 
 ## 插件列表
