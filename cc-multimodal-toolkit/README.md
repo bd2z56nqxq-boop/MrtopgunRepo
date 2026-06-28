@@ -1,6 +1,6 @@
 # CC Multimodal Toolkit
 
-> 给 Claude Code 装上眼睛：Gemini 读图 + 截图盘存工作流
+> 给 Claude Code 装上眼睛和画笔：Gemini 读图 + Codex 生图 + 截图工作流
 
 ## 能力矩阵
 
@@ -8,9 +8,7 @@
 |------|----------|------|------|
 | 🔍 读图分析 | `/cgmb` 命令 | Gemini 2.5 Flash | 10-30s |
 | 🔍 网页搜索 | `/cgmb chat <问题>` | Gemini | 5-15s |
-| 🎨 AI 生图 | 依赖 Codex 插件（本插件不内置生图能力） | gpt-image-2 | 30-60s |
-
-> **注意：** AI 生图能力依赖 OpenAI Codex 插件。本插件不直接提供生图命令，只提供与 Codex 插件配合使用的工作流说明。
+| 🎨 AI 生图 | `/codex:rescue` / "生成xxx图片" | gpt-image-2 | 30-60s |
 
 ## 安装
 
@@ -85,9 +83,9 @@ cgmb.cmd verify
 claude.cmd auth
 ```
 
-### 4. 可选：安装 Codex 插件（生图能力）
+### 4. 安装 Codex 插件（生图能力）
 
-生图能力由 OpenAI 的 Codex 插件提供，不属于本插件。如需生图：
+安装 OpenAI Codex 插件实现 AI 生图：
 
 **macOS / Linux / Git Bash:**
 
@@ -121,6 +119,16 @@ codex.cmd login
 ```
 
 > **注意：** 当前稳定入口是 `/cgmb` 命令。直接说"这里不对""看下截图"等自然语言自动触发能力，取决于你的 `CLAUDE.md` 中是否配置了截图检测规则（见下方"进阶配置"）。
+
+### 生图
+
+```
+/codex:rescue 赛博朋克城市夜景海报     # Codex 生图命令
+```
+或直接说：
+```
+生成一张秋天红叶林间的照片
+```
 
 ### 进阶配置（可选）
 
