@@ -6,7 +6,18 @@
 
 当用户的消息中包含对"图"、"截图"、"这个"、"这里"、"看下"、"你看"等图像引用，但没有明确给出文件路径时：
 
-1. 自动查找 `C:/Users/Administrator/Pictures/Screenshots/` 中最新的截图
+1. 自动查找截图目录中最新的截图
+   - **Windows PowerShell:**
+     ```powershell
+     $dir = Join-Path $env:USERPROFILE "Pictures\Screenshots"
+     Get-ChildItem -LiteralPath $dir -File |
+       Sort-Object LastWriteTime -Descending |
+       Select-Object -First 1 -ExpandProperty FullName
+     ```
+   - **macOS / Linux:**
+     ```bash
+     ls -lt ~/Desktop/ | head -2
+     ```
 2. 用 CGMB (`cgmb analyze`) 读取截图内容
 3. 结合用户的文字反馈和要求进行后续处理
 
@@ -15,11 +26,20 @@
 - "CGMB解读" → 直接读最新截图并分析
 - "看下这张图 D:/photo.png" → 分析指定图片
 
+## 稳定入口：`/cgmb`
+
+`/cgmb` 是本插件的核心命令，支持：
+- `/cgmb` — 读最新截图
+- `/cgmb <描述>` — 读最新截图 + 指定分析角度
+- `/cgmb <图片路径> <描述>` — 分析指定图片
+- `/cgmb chat <问题>` — Gemini 网页搜索
+
 ## 生图规则
 
+- AI 生图依赖 OpenAI Codex 插件（需单独安装）
 - 用户说"生成xxx图片" → 使用 Codex CLI (`codex exec`) 生图
 - 用户使用 `/codex:rescue` 命令 → 同上
-- 生图默认输出到 `C:/Users/Administrator/output/images/`
+- 生图默认输出到 `~/output/images/`
 
 ## 环境变量
 

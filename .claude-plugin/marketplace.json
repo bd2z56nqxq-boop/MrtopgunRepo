@@ -1,0 +1,22 @@
+{
+  "name": "mrtopgun-plugins",
+  "owner": {
+    "name": "Mrtopgun"
+  },
+  "metadata": {
+    "description": "Mrtopgun 的 Claude Code 插件集合。",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cc-multimodal-toolkit",
+      "description": "Gemini 读图分析 + Codex 生图工作流，含截图盘存命令和网页搜索。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mrtopgun"
+      },
+      "source": "./cc-multimodal-toolkit",
+      "homepage": "https://github.com/bd2z56nqxq-boop/MrtopgunRepo/tree/main/cc-multimodal-toolkit"
+    }
+  ]
+}

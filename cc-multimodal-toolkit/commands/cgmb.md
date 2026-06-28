@@ -13,8 +13,18 @@ allowed-tools: Bash
 **核心策略：不用「描述」用「盘存」——让 Gemini 逐像素抄录，而非概括。**
 
 ### 1. 自动找截图（用户未提供路径时）
+
+**Windows PowerShell:**
+```powershell
+$dir = Join-Path $env:USERPROFILE "Pictures\Screenshots"
+Get-ChildItem -LiteralPath $dir -File |
+  Sort-Object LastWriteTime -Descending |
+  Select-Object -First 1 -ExpandProperty FullName
+```
+
+**macOS / Linux:**
 ```bash
-ls -lt "C:/Users/Administrator/Pictures/Screenshots/" | head -2
+ls -lt ~/Desktop/ | head -2
 ```
 
 ### 2. 执行完整盘存（两步法）

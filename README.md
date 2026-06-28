@@ -2,6 +2,22 @@
 
 Claude Code 插件集合。
 
+## 安装本仓库的插件
+
+```bash
+# macOS / Linux / Git Bash
+claude plugin marketplace add bd2z56nqxq-boop/MrtopgunRepo
+
+# Windows PowerShell
+claude.cmd plugin marketplace add bd2z56nqxq-boop/MrtopgunRepo
+```
+
+然后安装具体插件：
+
+```bash
+claude plugin install cc-multimodal-toolkit@mrtopgun-plugins --scope user
+```
+
 ## 插件列表
 
-- **[cc-multimodal-toolkit](./cc-multimodal-toolkit/)** — 给 Claude Code 装上眼睛和画笔：Gemini 读图 + Codex 生图 + 截图自动检测
+- **[cc-multimodal-toolkit](./cc-multimodal-toolkit/)** — 给 Claude Code 装上眼睛：Gemini 读图 + 截图盘存工作流 + CGMB 网页搜索
